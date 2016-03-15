@@ -1,0 +1,10 @@
+$baseFontSize : 20;//default size 20px
+$baseFontUnit : px;//default unit px
+
+@function pxToRem($px){
+  @if($baseFontUnit == "px"){
+    @return $px + $baseFontUnit;
+  } @else {
+    @return $px / $baseFontSize + $baseFontUnit;
+  }
+}
