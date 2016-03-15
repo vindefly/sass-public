@@ -1,0 +1,23 @@
+@import "../../sassPlugin/function.scss";
+$baseFontSize : 10; //set default size
+$baseFontUnit : rem; //set mobile app
+
+html, body{
+  margin: 0;
+  padding: 0;
+  font: pxToRem(18)/150% arial;
+}
+
+.main {
+  width: 100%;
+  .inner {
+    width: pxToRem(640);
+    margin: 0 auto;
+  }
+}
+
+.header{
+  background-color: #eee;
+  font-size: pxToRem(32);
+  margin: 0 pxToRem(10);
+}

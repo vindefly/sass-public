@@ -1,0 +1,25 @@
+@import "../../sassPlugin/function.scss";
+html, body{
+  margin: 0;
+  padding: 0;
+  font: pxToRem(14)/150% arial;
+}
+
+.main {
+  width: 100%;
+  .inner {
+    width: pxToRem(960);
+    margin: 0 auto;
+  }
+}
+
+.header{
+  background-color: #eee;
+  font-size: pxToRem(16);
+  margin: 0 pxToRem(15);
+}
+
+.footer{
+  width: 100%;
+  height: pxToRem(200);
+}
