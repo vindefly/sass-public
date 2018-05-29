@@ -1,0 +1,17 @@
+{
+  "success" : true,
+  "items" : [
+    {
+      "id" : 1,
+      "name" : "拯救精灵王",
+      "image"  : "http://cdn-cc.test.17zuoye.net/public/skin/studentv3/images/park-box/p-banner-04.jpg",
+      "getLink" : ""
+    },
+    {
+      "id" : 1,
+      "name" : "洛亚传说",
+      "image"  : "http://cdn-cc.test.17zuoye.net/public/skin/studentv3/images/park-box/p-banner-jjsg.jpg",
+      "getLink" : "http://www.test.17zuoye.net"
+    }
+  ]
+}

@@ -1,23 +1,45 @@
-@import "../../sassPlugin/function.scss";
-$baseFontSize : 10; //set default size
+@import "../../sassPlugin/function";
+@import "../../sassPlugin/index";
+$baseFontSize : 40; //set default size
 $baseFontUnit : rem; //set mobile app
-
-html, body{
-  margin: 0;
-  padding: 0;
-  font: pxToRem(18)/150% arial;
+html,body{
+  height: 100%;
 }
-
-.main {
+.c-wrap{
+  position: relative;
   width: 100%;
-  .inner {
-    width: pxToRem(640);
-    margin: 0 auto;
-  }
+  height: 100%;
 }
-
-.header{
-  background-color: #eee;
-  font-size: pxToRem(32);
-  margin: 0 pxToRem(10);
+.c-headed{
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: pxToRem(80);
+  line-height: pxToRem(80);
+  background-color: #00acf4;
+  text-align: center;
+  font-size: pxToRem(30);
+  color: #fff;
+}
+.c-main{
+  height: 100%;
+  padding: pxToRem(80) 0;
+  box-sizing: border-box;
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  -o-box-sizing: border-box;
+  overflow-y: auto;
+}
+.c-footer{
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  width: 100%;
+  height: pxToRem(80);
+  line-height: pxToRem(80);
+  background-color: #00acf4;
+  text-align: center;
+  font-size: pxToRem(30);
+  color: #fff;
 }

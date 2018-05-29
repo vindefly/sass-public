@@ -1,0 +1,15 @@
+body,html{width:100%;height:5%;background:url(../images/corret.png?v=fd0e73b42f)}
+.main{width:100%}
+.main .inner{width:960px;margin:0 auto;color:#fff;font-size:20px;font-weight:700;line-height:150%;-webkit-text-shadow:1px 0 0 red,-1px 0 0 red,0 1px 0 red,0 -1px 0 red;-moz-text-shadow:1px 0 0 red,-1px 0 0 red,0 1px 0 red,0 -1px 0 red;text-shadow:1px 0 0 red,-1px 0 0 red,0 1px 0 red,0 -1px 0 red}
+.main .content{width:50px;padding:1px}
+.main input{font-size:18px}
+.header{background-color:#eee;font-size:16px;margin:0 15px;background:url(../images/corret.png?v=fd0e73b42f)}
+.footer{width:100%;height:500px;background:url(../images/error.png?v=945962324a)}
+.vox-icon-0{background-position:0 0}
+.vox-icon-1{background-position:-24px 0}
+.vox-icon-2{background-position:-48px 0}
+.vox-icon-3{background-position:-72px 0}
+.vox-icon-4{background-position:-96px 0}
+.vox-icon-5{background-position:-120px 0}
+.vox-icon-6{background-position:-144px 0}
+.vox-icon-7{background-position:-168px 0}

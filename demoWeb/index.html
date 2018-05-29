@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <link rel="stylesheet" href="css/index.css">
+    <script type="text/javascript" src="../lib/require.min.js"></script>
+
+</head>
+<body>
+    <div id="bannerList"></div>
+
+    <div class="main">
+        <div class="inner">welcome Web
+            count : <input type="text" data-bind="textInput: count" value=""/>
+            <span data-bind="text: count"></span>
+        </div>
+    </div>
+
+    <div class="number" style="cursor: default;">1234123</div>
+
+    <script type="text/javascript" src="../lib/config.js"></script>
+    <script type="text/javascript" src="scripts/scriptsConfig.js"></script>
+
+    <!--<script type="text/javascript" src="scripts/voxLogs.js"></script>-->
+    <!--<script type="text/javascript" src="scripts/voxSpread.js"></script>-->
+    <script type="text/javascript">
+        (function(){
+            require(["home"], function () {});
+        }());
+    </script>
+</body>
+</html>

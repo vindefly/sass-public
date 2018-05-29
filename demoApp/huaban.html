@@ -1,0 +1,160 @@
+<!doctype html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <!--页面窗口自动调整到设备宽度，并禁止用户缩放页面-->
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no"/>
+    <!--关闭电话号码识别：-->
+    <meta name="format-detection" content="telephone=no"/>
+    <!--关闭邮箱地址识别：-->
+    <meta name="format-detection" content="email=no"/>
+    <!--指定 iOS 的 safari 顶端状态条的样式 可选default、black、black-translucent-->
+    <meta name="apple-mobile-web-app-status-bar-style" content="black"/>
+    <title>使用canvas来画用户手写数据</title>
+    <script src="https://cdn.bootcss.com/device.js/0.2.7/device.js"></script>
+</head>
+<body>
+<!--<canvas id="myCanvas" class="myCanvas" onmousemove="draw();" onmousedown="pMoveTo();" onmouseup="cancel();"></canvas>-->
+
+<canvas id="myCanvas" class="myCanvas" ></canvas>
+
+<div id="logDiv"></div>
+<script src="../lib/jquery-1.12.2.min.js"></script>
+
+<script type="text/javascript">
+
+    var c = document.getElementById("myCanvas");
+
+    var cxt = c.getContext("2d");
+
+    var cx = $('#myCanvas').offset().left;
+
+    var cy = $('#myCanvas').offset().top;
+
+    var $logDiv = $("#logDiv");
+    function appendChildren(content){
+        $("<p></p>").text(content).appendTo($logDiv);
+    }
+    //初始化画板
+
+    var init = function () {
+
+        for (var x = 0.5; x < 500; x += 10) {
+
+            cxt.moveTo(x, 0);
+
+            cxt.lineTo(x, 500);
+
+        }
+
+        for (var y = 0.5; y < 500; y += 10) {
+
+            cxt.moveTo(0, y);
+
+            cxt.lineTo(500, y);
+
+        }
+
+        cxt.strokeStyle = "#eee";
+
+        cxt.stroke();
+        if(device.mobile()){
+            c.addEventListener("touchstart", pMoveTo, false);
+            c.addEventListener("touchend", cancel, false);
+            c.addEventListener("touchmove", draw, false);
+            c.addEventListener("touchcancel",cancel,false);
+        }else{
+            c.addEventListener("mousedown", pMoveTo, false);
+            c.addEventListener("mouseup", cancel, false);
+            c.addEventListener("mousemove", draw, false);
+            c.addEventListener("mouseleave", cancel, false);
+        }
+    }
+
+    init();
+
+    //上下文环境，用于记录鼠标的轨迹
+
+    var drawContext = function (x, y) {
+
+        var end_x = 0;
+
+        var end_y = 0;
+
+        return function (x, y) {
+
+            cxt.lineTo(x, y);
+
+            cxt.stroke();
+
+            end_x = x;
+
+            end_y = y;
+
+            cxt.moveTo(end_x, end_y);
+
+        }
+
+    }
+
+
+    var dc;
+
+    //每一次落笔（鼠标单击）都创建一个上下文环境
+
+    function pMoveTo(e) {
+        e.preventDefault();
+        e = e || window.event;
+
+        var _x = (e.clientX || e.changedTouches[0].clientX) - cx;
+
+        var _y = (e.clientY || e.changedTouches[0].clientY) - cy;
+
+        cxt.moveTo(_x, _y);
+
+        cxt.beginPath();
+
+        cxt.strokeStyle = "red";
+
+        dc = drawContext(_x, _y);
+        appendChildren("pMoveTo");
+    }
+
+    //画画
+
+    function draw(e) {
+        e.preventDefault();
+        e = e || window.event;
+        var _x = (e.clientX || e.changedTouches[0].clientX) - cx;
+
+        var _y = (e.clientY || e.changedTouches[0].clientY) - cy;
+
+        if (dc) {
+
+            dc(_x, _y);
+            // appendChildren("draw");
+
+        }
+
+    }
+
+    //鼠标放开，则释放这次落笔
+
+    function cancel(e) {
+        e.preventDefault();
+        appendChildren("cancel");
+        if (dc) {
+
+            dc = null;
+
+        }
+
+        else {
+
+            return;
+        }
+
+    }
+</script>
+</body>
+</html>

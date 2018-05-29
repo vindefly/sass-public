@@ -1,0 +1,194 @@
+@import "../../sassPlugin/function";
+@import "../../sassPlugin/index";
+$baseFontSize : 40; //set default size
+$baseFontUnit : rem; //set mobile app
+body{
+  background: #f2f5f6;
+}
+.fairylandBanner{
+  background: #f2f5f6;
+  padding: pxToRem(30) pxToRem(30) 0 pxToRem(30);
+  height: pxToRem(200);
+  img{
+    display: block;
+    width: 100%;
+    height: 100%;
+    border-radius: pxToRem(34);
+  }
+}
+.fairylandTips{
+  position: relative;
+  margin: pxToRem(30) auto 0;
+  width: pxToRem(486);
+  padding-left: pxToRem(90);
+  .text{
+    position: relative;
+    width: 100%;
+    padding: pxToRem(14) 0;
+    background: #bde5f6;
+    border-radius: pxToRem(28);
+    text-align: center;
+    font-weight: bold;
+    font-size: pxToRem(30);
+    color: #1a6a8c;
+    &:before{
+      position: absolute;
+      content: "";
+      display: block;
+      bottom: pxToRem(4);
+      left: pxToRem(-6);
+      width: pxToRem(16);
+      height: pxToRem(16);
+      background: url("../images/tips-icon02.png") no-repeat;
+      background-size: 100% 100%;
+    }
+  }
+  &:before{
+    position: absolute;
+    content: "";
+    display: block;
+    top: 0;
+    left: 0;
+    width: pxToRem(74);
+    height: pxToRem(74);
+    background: url("../images/tips-icon01.png") no-repeat;
+    background-size: 100% 100%;
+  }
+}
+.fairylandBox{
+  height: 100%;
+  margin: pxToRem(30);
+  padding: 0 pxToRem(20);
+  background: #fff;
+  border-radius: pxToRem(28);
+}
+.fairyland-list{
+  position: relative;
+  display: block;
+  padding: pxToRem(20) 0;
+  border-bottom: 1px solid #d6d6d6;
+  .list-item{
+    overflow: hidden;
+    .img{
+      float: left;
+      width: pxToRem(100);
+      height: pxToRem(100);
+      border-radius: pxToRem(20);
+      overflow: hidden;
+      img{
+        display: block;
+        width: 100%;
+        height: 100%;
+      }
+    }
+    .info{
+      margin-left: pxToRem(120);
+      .title{
+        font-size: pxToRem(34);
+        line-height: 120%;
+        color: #0d90e2;
+      }
+      .describe{
+        overflow: hidden;
+        padding-right: pxToRem(140);
+        font-size: pxToRem(24);
+        line-height: pxToRem(38);
+        color: #999999;
+      }
+      .state{
+        display: inline-block;
+        padding: pxToRem(5) pxToRem(6);
+        background: #74ca87;
+        border-radius: pxToRem(10);
+        font-size: pxToRem(18);
+        line-height: 100%;
+        color: #fff;
+      }
+      .state-yellow{
+        background: #ff9933;
+      }
+      .label-hot{
+        display: inline-block;
+        position: relative;
+        top: pxToRem(-4);
+        margin: 0 0 0 pxToRem(10);
+        padding: pxToRem(5) pxToRem(6);
+        background: #ff6666;
+        border-radius: pxToRem(8);
+        font-size: pxToRem(18);
+        line-height: 100%;
+        color: #fff;
+      }
+    }
+  }
+  .list-user{
+    font-size: 0;
+    padding: pxToRem(20) 0 0;
+    clear: both;
+    span{
+      display: inline-block;
+      vertical-align: middle;
+      margin: 0 pxToRem(20) 0 0;
+      font-size: pxToRem(24);
+      color: #333333;
+      img{
+        display: block;
+        width: pxToRem(50);
+        height: pxToRem(50);
+        border-radius: pxToRem(8);
+      }
+      i{
+        display: inline-block;
+        margin: 0 pxToRem(6);
+        font-style: normal;
+        color: #ff6666;
+      }
+    }
+    .flex{
+      display: inline-block;
+      vertical-align: middle;
+      span{
+        float: left;
+      }
+    }
+  }
+  .list-tips{
+    padding-top: pxToRem(20);
+    font-size: pxToRem(24);
+    line-height: pxToRem(30);
+    color: #ff9966;
+    .horn-icon{
+      display: inline-block;
+      vertical-align: middle;
+      margin: 0 pxToRem(6);
+      width: pxToRem(30);
+      height: pxToRem(30);
+      background: url("../images/horn-icon.png") no-repeat;
+      background-size: 100% 100%;
+    }
+  }
+  &:last-child{
+    border-bottom: 0;
+  }
+  &:after{
+    position: absolute;
+    content: "";
+    display: block;
+    top: 50%;
+    right: pxToRem(15);
+    margin-top: pxToRem(-15);
+    width: pxToRem(36);
+    height: pxToRem(36);
+    background: url("../images/arrow-r.png") no-repeat;
+    background-size: 100% 100%;
+  }
+  &.hot:after{
+    position: absolute;
+    right: pxToRem(-30);
+    top: pxToRem(85);
+    width: pxToRem(166);
+    height: pxToRem(72);
+    background: url("../images/hot-icon.png") no-repeat;
+    background-size: 100% 100%;
+  }
+}

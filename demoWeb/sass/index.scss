@@ -1,15 +1,22 @@
 @import "../../sassPlugin/function.scss";
-html, body{
-  margin: 0;
-  padding: 0;
-  font: pxToRem(14)/150% arial;
-}
-
+@import "../_sass/base";
 .main {
   width: 100%;
   .inner {
     width: pxToRem(960);
     margin: 0 auto;
+    color: #fff;
+    font-size : 20px ;
+    font-weight: bold;
+    line-height: 150%;
+    @include textShadow(pxToRem(1), #f00);
+  }
+  .content{
+    width: pxToRem(50);
+    padding: pxToRem(1);
+  }
+  input{
+    font-size: pxToRem(18)
   }
 }
 
@@ -17,9 +24,14 @@ html, body{
   background-color: #eee;
   font-size: pxToRem(16);
   margin: 0 pxToRem(15);
+  background: url("../images/corret.png");
 }
 
 .footer{
   width: 100%;
-  height: pxToRem(200);
+  height: pxToRem(500);
+
+  background: url("../images/error.png");
 }
+
+@include iconItems(".vox-icon", 7, -24, "x");
